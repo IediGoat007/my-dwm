@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-max '/home/iedi/Pictures/background.jpg' 
