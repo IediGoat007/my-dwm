@@ -32,8 +32,8 @@ static const char *const autostart[] = {
         "dunst", NULL,
 	"xrandr", "--output", "HDMI-0", "--mode", "1920x1080", "--rate", "75", NULL,
 	"picom", NULL,
-	"sh", "-c", "~/github/dwm/status", NULL,
-	"sh", "-c", "~/github/dwm/fehbg", NULL,
+	"sh", "-c", "~/github/my-dwm/status", NULL,
+	"sh", "-c", "~/github/my-dwm/fehbg", NULL,
 	NULL /* terminate */
 };
 
