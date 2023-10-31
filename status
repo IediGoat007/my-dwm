@@ -22,7 +22,7 @@ display() {
 }
 
 # Set up signal handlers
-trap "update_vol; display" "RTMIN"
+trap "update_vol; display" "RTMIN+1"
 
 # Initial updates
 update_vol
