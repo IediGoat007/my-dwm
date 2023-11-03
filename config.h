@@ -88,7 +88,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_x,      spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD ("thunar")},
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD ("flameshot gui --clipboard")},
-	{ MODKEY|ControlMask,           XK_z,      spawn,          SHCMD ("firefox")},
+	{ MODKEY|ControlMask,           XK_z,      spawn,          SHCMD ("firefox-nightly")},
 	{ MODKEY|ControlMask,           XK_equal,  spawn,          SHCMD ("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 -f ~/github/my-dwm/status")},
 	{ MODKEY|ControlMask,           XK_minus,  spawn,          SHCMD ("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 -f ~/github/my-dwm/status")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
