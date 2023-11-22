@@ -34,23 +34,26 @@ static const char *const autostart[] = {
 	"picom", NULL,
 	"sh", "-c", "~/github/my-dwm/status", NULL,
 	"sh", "-c", "~/github/my-dwm/fehbg", NULL,
+	"easyeffects", NULL,
 	NULL /* terminate */
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5" };
+/* static const char *tags[] = { "1", "2", "3", "4", "5" }; */
+static const char *tags[] = { "Primary", "Secondary", "Games", "Chat", "Music", "EQ" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-        { "steam",   NULL,     NULL,           1 << 2,    0,          0,           0         -1 },
-        { "discord", NULL,     NULL,           1 << 3,    0,          0,           0         -1 },
-        { "spotify", NULL,     NULL,           1 << 4,    0,          0,           0         -1 },
-	{ "kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class        instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+        { "steam",       NULL,     NULL,           1 << 2,    0,          0,           0,        -1 },
+        { "discord",     NULL,     NULL,           1 << 3,    0,          0,           0,        -1 },
+        { "spotify",     NULL,     NULL,           1 << 4,    0,          0,           0,        -1 },
+	{ "easyeffects", NULL,     NULL,           1 << 5,    0,          0,           0,        -1 },
+	{ "kitty",       NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,          NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -120,6 +123,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("systemctl reboot")},
 	{ MODKEY|ControlMask|ShiftMask, XK_s,      spawn,          SHCMD("systemctl poweroff")},
