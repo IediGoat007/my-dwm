@@ -10,7 +10,7 @@ update_time() {
 }
 
 update_vol() {
-  vol="$(pactl list sinks | awk '/Volume:/ {print $5}' | awk 'NR==3' | tr -d '%')%"
+  vol="$(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
 }
 
 # Display function
