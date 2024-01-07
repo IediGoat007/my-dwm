@@ -1,1 +1,23 @@
-# My custom dwm config.
+My custom dwm config.
+
+Im writing this here as a jurnal lol, but yeah im getting kind of bored of having to tweak so many stuff and it still 
+barely working and now knowing if its nvidia or picom or how dwm fundamentally works or some patch my dumbass applied 
+or even debian because for some reason i like more bleeding edge stuff and im using sid.
+
+Fact is at the beggining it was really fun and everything worked and of course i loved it more than any de you can
+find out there, but with time stuff got upgraded and started having some problems that are simply way out of my
+league to solve, that i had to fix with the stupidest method because i couldnt do more than that, but still it was
+ok and i enjoyed using my config even tho i made it very specific to my current setup and thats gonna hurt later.
+
+But i really want now to get a little more into gaming (i slowed down a lot with it since 1st getting linux) and
+this plain simple debian just aint my attraction anymore for that, so here i am writing this thing before i 
+hop on to nobara hoping that im gonna get a simpler, less buggier experience. But well, if it wont work i will 
+probably come back here but use the trusty stable debian and not complicate my life with all kinds of shit, in
+wich case this dwm config will be once again my lovely home and i will be proud knowing that bad as it looks
+(the code i mean), at least its mine and i was the one assigning my own values to variables and i spent 1 whole
+day manually patching the source file, gosh what a pain that was given my almost 0 coding expertise.
+
+Also honorable mention to Chris Titus for inspiring me to switch to linux and later to dwm, dude you are 
+just great.
+
+no one will ever see this lol why am i even writing
