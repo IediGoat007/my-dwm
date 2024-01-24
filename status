@@ -9,6 +9,18 @@ update_time() {
   time=$(date "+%b %d %H:%M ")
 }
 
+update_bat() {
+  if [[ -e /sys/class/power_supply/BAT0/status ]]; then
+    bat_status=$(< /sys/class/power_supply/BAT0/status)
+    if [[ -e /sys/class/power_supply/BAT0/capacity ]]; then
+      bat_capacity=$(< /sys/class/power_supply/BAT0/capacity)
+      bat="$bat_status $bat_capacity%"
+    else
+      bat="$bat_status (capacity not available)"
+    fi
+  fi
+}
+
 update_vol() {
   vol="$(pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%"
 }
@@ -16,6 +28,7 @@ update_vol() {
 # Display function
 display() {
   status=""
+  [[ -n "$bat" ]] && status+="$bat "
   [[ -n "$vol" ]] && status+="$vol "
   [[ -n "$time" ]] && status+="$time"
   xsetroot -name "$status"
@@ -23,6 +36,7 @@ display() {
 
 # Set up signal handlers
 trap "update_vol; display" "RTMIN+1"
+trap "update_bat; display" "RTMIN+2"
 
 # Initial updates
 update_vol
@@ -32,6 +46,7 @@ while true; do
   sleep 1
   sec=$((sec + 1))
   case $((sec % 60)) in
+    0) update_bat;;
     [1-5]) 
       update_time
       update_vol

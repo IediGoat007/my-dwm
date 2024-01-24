@@ -30,7 +30,6 @@ static const char *const autostart[] = {
 	"dbus-update-activation-environment", "--systemd", "--all", NULL,
         "lxpolkit", NULL,
         "dunst", NULL,
-	"xrandr", "--output", "HDMI-0", "--mode", "1920x1080", "--rate", "75", NULL,
 	"picom", NULL,
 	"xset", "s", "off", "-dpms", NULL,
 	"sh", "-c", "~/github/my-dwm/status", NULL,
