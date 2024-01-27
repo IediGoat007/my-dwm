@@ -35,8 +35,8 @@ display() {
 }
 
 # Set up signal handlers
-trap "update_vol; display" "RTMIN"
-trap "update_bat; display" "RTMIN+1"
+trap "update_vol; display" "RTMIN+1"
+trap "update_bat; display" "RTMIN+2"
 
 # Initial updates
 update_vol
