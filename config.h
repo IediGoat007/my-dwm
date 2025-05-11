@@ -13,8 +13,8 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Hack Nerd Font:size=10" };
-static const char dmenufont[]       = "Hack Nerd Font:size=10";
+static const char *fonts[]          = { "DepartureMono Nerd Font:size=10" };
+static const char dmenufont[]       = "DepartureMono Nerd Font:size=10";
 static const char col_gray1[]       = "#1e1e2e";
 static const char col_gray2[]       = "#1e1e2e";
 static const char col_gray3[]       = "#d9e0ee";
@@ -28,11 +28,11 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"dbus-update-activation-environment", "--systemd", "--all", NULL,
-        "lxpolkit", NULL,
+	"polkit-gnome-authentication-agent-1", NULL,
+	"qbittorrent", NULL,
         "dunst", NULL,
 	"picom", NULL,
-	"xset", "s", "off", "-dpms", NULL,
+	"xset", "s", "off", "-dpms", "s", "noblank", "b", "off", NULL,
 	"sh", "-c", "~/github/my-dwm/status", NULL,
 	"sh", "-c", "~/github/my-dwm/fehbg", NULL,
 	NULL /* terminate */
@@ -91,6 +91,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD ("thunar")},
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD ("flameshot gui --clipboard")},
 	{ MODKEY|ControlMask,           XK_z,      spawn,          SHCMD ("firefox")},
+  { MODKEY|ControlMask,           XK_d,      spawn,          SHCMD ("discord")},
+  { MODKEY|ControlMask,           XK_s,      spawn,          SHCMD ("steam")},
 	{ MODKEY|ControlMask,           XK_equal,  spawn,          SHCMD ("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 -f ~/github/my-dwm/status")},
 	{ MODKEY|ControlMask,           XK_minus,  spawn,          SHCMD ("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 -f ~/github/my-dwm/status")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
@@ -123,8 +125,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("systemctl reboot")},
-	{ MODKEY|ControlMask|ShiftMask, XK_s,      spawn,          SHCMD("systemctl poweroff")},
+	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("sudo /usr/bin/openrc-shutdown --reboot now")},
+	{ MODKEY|ControlMask|ShiftMask, XK_s,      spawn,          SHCMD("sudo /usr/bin/openrc-shutdown --poweroff now")},
+	{ MODKEY|ControlMask|ShiftMask, XK_u,      spawn,          SHCMD("pkill -u $USER")},
 };
 
 /* button definitions */
