@@ -95,6 +95,8 @@ static const Key keys[] = {
   { MODKEY|ControlMask,           XK_s,      spawn,          SHCMD ("steam")},
 	{ MODKEY|ControlMask,           XK_equal,  spawn,          SHCMD ("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 -f ~/github/my-dwm/status")},
 	{ MODKEY|ControlMask,           XK_minus,  spawn,          SHCMD ("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 -f ~/github/my-dwm/status")},
+  { MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD ("xbacklight -inc 10")},
+  { MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD ("xbacklight -dec 10")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
